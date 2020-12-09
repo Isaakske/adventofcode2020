@@ -6,7 +6,6 @@ $inputArray = explode(PHP_EOL, $inputString);
 
 $needle = 'shiny gold bag';
 $bagMap = [];
-$bagOptions = [];
 
 foreach ($inputArray as $bag) {
     preg_match_all('/\d?[a-z\s]* bag/', $bag, $bags);
@@ -14,25 +13,21 @@ foreach ($inputArray as $bag) {
 
     [$definition] = array_splice($bags, 0, 1);
 
-    $bagMap[$definition] = array_map(function ($b) {
-        return preg_replace('/\d+\s/', '', $b);
-    }, $bags);
+    $bagMap[$definition] = $bags;
 }
 
-function bagCanContainNeedle($needle, $bag, $bags, &$bagOptions, $bagMap) {
-    if (in_array($needle, $bags)) {
-        $bagOptions[] = $bag;
+function countBagsInBag($needle, $bagMap) {
+    if (!array_key_exists($needle, $bagMap)) {
+        return 1;
     }
 
-    foreach ($bags as $b) {
-        if (array_key_exists($b, $bagMap)) {
-            bagCanContainNeedle($needle, $bag, $bagMap[$b], $bagOptions, $bagMap);
-        }
-    }
+    return array_reduce($bagMap[$needle], function (int $carry, string $b) use ($bagMap) {
+        preg_match('/\d+/', $b, $matches);
+        $amount = $matches[0];
+        $bag = preg_replace('/\d+\s/', '', $b);
+
+        return $carry + ($amount * countBagsInBag($bag, $bagMap));
+    }, 1);
 }
 
-foreach ($bagMap as $bag => $bags) {
-    bagCanContainNeedle($needle, $bag, $bags, $bagOptions, $bagMap);
-}
-
-echo count(array_unique($bagOptions)) . PHP_EOL;
+echo countBagsInBag($needle, $bagMap) - 1 . PHP_EOL;
