@@ -33,7 +33,6 @@ for ($i = 0; $i < count($inputArray);) {
     elseif ($diff == 3) $possibilities = 7;
     elseif ($diff == 4) $possibilities = 13;
     elseif ($diff == 5) $possibilities = 24;
-    echo '[' . implode(', ', $adapters) . '] = ' . $possibilities . PHP_EOL;
 
     $combinations[] = $possibilities;
 
