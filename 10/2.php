@@ -8,6 +8,17 @@ $combinations = [];
 
 sort($inputArray);
 
+function tribonacci($n) {
+    switch ($n) {
+        case 0:
+        case 1: return 0;
+        case 2: return 1;
+        default: return tribonacci($n - 1)
+            + tribonacci($n - 2)
+            + tribonacci($n - 3);
+    }
+}
+
 for ($i = 0; $i < count($inputArray);) {
     $start = $i;
     $end = $i;
@@ -22,19 +33,12 @@ for ($i = 0; $i < count($inputArray);) {
     }
 
     $amount = count($adapters);
-    $diff = $amount - 2;
-    if ($diff < 1) {
+    if ($amount < 3) {
         $i++;
         continue;
     }
 
-    if ($diff == 1) $possibilities = 2;
-    elseif ($diff == 2) $possibilities = 4;
-    elseif ($diff == 3) $possibilities = 7;
-    elseif ($diff == 4) $possibilities = 13;
-    elseif ($diff == 5) $possibilities = 24;
-
-    $combinations[] = $possibilities;
+    $combinations[] = tribonacci(++$amount);
 
     $i = $end + 1;
 }
@@ -42,27 +46,27 @@ for ($i = 0; $i < count($inputArray);) {
 echo array_product($combinations) . PHP_EOL;
 
 // x = 1
-// 2 - 0
+// 2 - 0 = 2
 // 0 1 2
 
 // x = 2
-// 4 - 0
+// 4 - 0 = 4
 // 0 1 2 3
 
 // x = 3
-// 8 - 1
+// 8 - 1 = 7
 // 0 1 2 3 4
 // 0       4
 
 // x = 4
-// 16 - 3
+// 16 - 3 = 13
 // 0 1 2 3 4 5
 // 0         5
 // 0 1       5
 // 0       4 5
 
 // x = 5
-// 32 - 8
+// 32 - 8 = 24
 // 0 1 2 3 4 5 6
 // 0           6
 // 0 1         6
