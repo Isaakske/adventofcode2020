@@ -1,6 +1,4 @@
-<?php
-
-return "1-7 q: qqqqxvqrkbqqztlqlzq
+1-7 q: qqqqxvqrkbqqztlqlzq
 1-3 q: cqbm
 15-16 h: hhhhhhhhhhhhhhbsh
 4-16 x: xvbxswpnvxtnfjrxxx
@@ -999,4 +997,4 @@ return "1-7 q: qqqqxvqrkbqqztlqlzq
 1-5 m: pmmmmmm
 6-11 j: jmkljhjjvjmfmjpj
 2-4 f: xhtkdf
-5-14 x: frqqxljjwsxndx";
+5-14 x: frqqxljjwsxndx

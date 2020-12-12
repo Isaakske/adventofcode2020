@@ -1,6 +1,4 @@
-<?php
-
-return "eyr:2033
+eyr:2033
 hgt:177cm pid:173cm
 ecl:utc byr:2029 hcl:#efcc98 iyr:2023
 
@@ -1103,4 +1101,4 @@ eyr:2027 byr:2015
 hgt:184 hcl:98fb9d pid:58151347
 iyr:2029
 
-hgt:183cm cid:187 byr:2019 ecl:xry iyr:2013 pid:164cm hcl:#18171d eyr:2021";
+hgt:183cm cid:187 byr:2019 ecl:xry iyr:2013 pid:164cm hcl:#18171d eyr:2021

@@ -1,6 +1,4 @@
-<?php
-
-return "nop +283
+nop +283
 acc +26
 acc +37
 acc +6
@@ -630,4 +628,4 @@ acc +38
 acc +49
 nop -99
 acc +50
-jmp +1";
+jmp +1

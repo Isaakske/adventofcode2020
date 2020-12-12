@@ -1,6 +1,6 @@
 <?php
 
-$inputString = require 'input.php';
+$inputString = file_get_contents(__DIR__ . '/input.txt');
 
 $inputArray = array_map(fn (string $row) => str_split($row), explode(PHP_EOL, $inputString));
 

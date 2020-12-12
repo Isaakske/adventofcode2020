@@ -1,6 +1,4 @@
-<?php
-
-return "light gold bags contain 2 light lime bags, 1 faded green bag, 3 clear olive bags, 2 dim bronze bags.
+light gold bags contain 2 light lime bags, 1 faded green bag, 3 clear olive bags, 2 dim bronze bags.
 muted beige bags contain 3 clear lime bags, 5 dark salmon bags, 1 pale olive bag.
 vibrant violet bags contain 3 dark tomato bags, 3 muted indigo bags, 3 plaid turquoise bags, 3 light silver bags.
 dull purple bags contain 2 wavy turquoise bags.
@@ -593,4 +591,4 @@ dull violet bags contain 2 pale bronze bags, 2 mirrored blue bags.
 pale teal bags contain 5 striped maroon bags, 3 pale gray bags.
 bright green bags contain 4 drab green bags, 3 drab indigo bags, 5 dull blue bags.
 posh violet bags contain 5 wavy white bags.
-clear brown bags contain no other bags.";
+clear brown bags contain no other bags.
